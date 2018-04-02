@@ -40,7 +40,6 @@ class DemoRouterViewController: UIViewController,UICollectionViewDelegate,UIColl
         flowLayout.minimumInteritemSpacing = 0
         self.cv.delegate = self
         self.cv.dataSource = self
-        
     }
     @IBAction func showJJImageAction(_ sender: Any) {
         let imageSheet:JJImagePickerSheet = JJImagePickerSheet.init(frame: CGRect.zero)

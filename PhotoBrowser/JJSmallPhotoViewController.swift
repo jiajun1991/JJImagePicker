@@ -29,13 +29,18 @@ class JJSmallPhotoViewController: UIViewController,UICollectionViewDelegate,UICo
         tempCV.dataSource = self
         tempCV.register(UINib.init(nibName: "JJSmallPhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "JJSmallPhotoCollectionViewCellID")
         tempCV.backgroundColor = UIColor.white
-        //滑动到最底部
-        var item = tempCV.numberOfItems(inSection: 0)-1
-        var lastItemIndex = NSIndexPath.init(item: item, section: 0)
-        tempCV.selectItem(at: lastItemIndex as IndexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.top)
         return tempCV
     }()
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if self.smallPhotoCv.contentSize.height > self.smallPhotoCv.frame.size.height {
+            self.smallPhotoCv.contentOffset = CGPoint.init(x: 0, y: self.smallPhotoCv.contentSize.height-smallPhotoCv.frame.size.height)
+        }
+//        //滑动到最底部
+//        let item = self.smallPhotoCv.numberOfItems(inSection: 0)-1
+//        let lastItemIndex = NSIndexPath.init(item: item, section: 0)
+//        self.smallPhotoCv.selectItem(at: lastItemIndex as IndexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.top)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dataAry.count
     }
