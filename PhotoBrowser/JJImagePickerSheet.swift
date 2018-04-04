@@ -16,9 +16,13 @@ class JJImagePickerSheet: UIView,UIImagePickerControllerDelegate,UINavigationCon
     var photoAlbumBtn:UIButton!
     let btnSize:CGFloat = 60
     var imageBlock:((NSArray)->())!
+    var configuration:JJPhotoConfiguration?
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.configuration = JJPhotoConfiguration.defaultPhotoConfiguration()
         //布局alertSheet
         self.frame = CGRect.init(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT)
         self.backgroundColor = UIColor.black.withAlphaComponent(0.3)
@@ -86,10 +90,12 @@ class JJImagePickerSheet: UIView,UIImagePickerControllerDelegate,UINavigationCon
         let nav = JJNavigationController.init(rootViewController: rootVC)
         nav.callSelectImageBlock = {(images) in
             self.imageBlock(images)
-            nav.dismiss(animated: false, completion: nil)
+            nav.dismiss(animated: false , completion: nil)
         }
-        nav.navigationBar.barTintColor = UIColor.black.withAlphaComponent(0.7)
-        nav.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        nav.configuration = self.configuration
+        nav.navigationBar.barTintColor  = self.configuration?.navBarColor
+        nav.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:(self.configuration?.navTitleColor)!]
+        UIApplication.shared.statusBarStyle = (self.configuration?.statusBarStyle)!
         return nav
     }
     required init?(coder aDecoder: NSCoder) {

@@ -51,11 +51,32 @@ class JJSmallPhotoViewController: UIViewController,UICollectionViewDelegate,UICo
         JJPhotoTool.shareManager().getImageByAsset(asset: self.dataAry[indexPath.row] as! PHAsset, size: size, resizeMode: PHImageRequestOptionsResizeMode.none) { (assetImage) in
             cell.smallIV.image = assetImage
         }
+        let nav:JJNavigationController = self.navigationController as! JJNavigationController
+
         cell.clickBlock = {(btn) in
             //点击上面选中的按钮
             if btn.isSelected == true {
-                let selectedDic = ["selectedIndex":indexPath.row,"image":cell.smallIV.image!] as [String : Any]
-                self.selectedImageAry.add(selectedDic)
+                if let temp = nav.configuration{
+                    //进行判空
+                    if self.selectedImageAry.count >= (temp.maxSelectCount)! {
+                        //弹出toast
+                        let style = ToastStyle()
+                        self.view.makeToast(String.init(format: "最多选择%d张", temp.maxSelectCount!), duration: 3, position: .center, title: nil, image: nil, style: style, completion: nil)
+                        //恢复按钮状态
+                        btn.isSelected = !btn.isSelected
+                        
+                    }else{
+                        //添加照片到数组
+                        let selectedDic = ["selectedIndex":indexPath.row,"image":cell.smallIV.image!] as [String : Any]
+                        self.selectedImageAry.add(selectedDic)
+                    }
+                }else{
+                    btn.isSelected = !btn.isSelected
+                }
+                
+            }else{
+                //从数组中拿出去
+                self.removeItemFromSelectedAry(index: indexPath.row)
             }
         }
         if self.selectedImageAry.count != 0 &&  self.cellIsSelected(index: indexPath.row){
@@ -91,7 +112,6 @@ class JJSmallPhotoViewController: UIViewController,UICollectionViewDelegate,UICo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "返回", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         //布局
         self.setUI()
     }
@@ -104,6 +124,15 @@ class JJSmallPhotoViewController: UIViewController,UICollectionViewDelegate,UICo
         rightNaviBtn.addTarget(self, action: #selector(confirmAction), for: UIControlEvents.touchUpInside)
         let rightItem:UIBarButtonItem = UIBarButtonItem.init(customView: rightNaviBtn)
         self.navigationItem.rightBarButtonItem = rightItem
+        let nav:JJNavigationController = self.navigationController as! JJNavigationController
+        nav.setNaviBackBtn(hidden: false)
+        let backBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 20, height: 20))
+        backBtn.setImage(UIImage.init(named: "back"), for: UIControlState.normal)
+        backBtn.addTarget(self, action: #selector(backAction), for: UIControlEvents.touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: backBtn)
+    }
+    @objc func backAction(){
+        self.navigationController?.popViewController(animated: true)
     }
     @objc func confirmAction() {
         let nav:JJNavigationController = self.navigationController as! JJNavigationController
@@ -113,6 +142,15 @@ class JJSmallPhotoViewController: UIViewController,UICollectionViewDelegate,UICo
             images.add(dic["image"] as! UIImage)
         }
         nav.callSelectImageBlock!(images)
+    }
+    ///从数组中取出目标元素
+    func removeItemFromSelectedAry(index:NSInteger) {
+        for item in self.selectedImageAry {
+            let dic:NSDictionary = item as! NSDictionary
+            if dic["selectedIndex"] as! NSInteger == index{
+                self.selectedImageAry.remove(item)
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

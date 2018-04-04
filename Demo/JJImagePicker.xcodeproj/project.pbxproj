@@ -14,6 +14,11 @@
 		F4037528206B832800772010 /* JJImagePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037527206B832800772010 /* JJImagePickerTests.swift */; };
 		F4037533206B832800772010 /* JJImagePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037532206B832800772010 /* JJImagePickerUITests.swift */; };
 		F4037541206BB2DA00772010 /* DemoRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4037540206BB2DA00772010 /* DemoRouterViewController.swift */; };
+		F4256D6F20747918003368BF /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4256D6C20747917003368BF /* back@2x.png */; };
+		F4256D72207484DC003368BF /* unSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4256D70207484DC003368BF /* unSelected@2x.png */; };
+		F4256D73207484DC003368BF /* selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4256D71207484DC003368BF /* selected@2x.png */; };
+		F4256D792074AA21003368BF /* JJPhotoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4256D782074AA21003368BF /* JJPhotoConfiguration.swift */; };
+		F4256D7C2074CE35003368BF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4256D7B2074CE35003368BF /* Toast.swift */; };
 		F47BD12420724F28002101B1 /* JJBigPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47BD11520724F28002101B1 /* JJBigPhotoViewController.swift */; };
 		F47BD12520724F28002101B1 /* JJImagePickerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47BD11620724F28002101B1 /* JJImagePickerHeader.swift */; };
 		F47BD12620724F28002101B1 /* JJImagePickerLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47BD11720724F28002101B1 /* JJImagePickerLibraryViewController.swift */; };
@@ -26,12 +31,12 @@
 		F47BD12D20724F28002101B1 /* JJSmallPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47BD11E20724F28002101B1 /* JJSmallPhotoCollectionViewCell.swift */; };
 		F47BD12E20724F28002101B1 /* JJSmallPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47BD11F20724F28002101B1 /* JJSmallPhotoCollectionViewCell.xib */; };
 		F47BD12F20724F28002101B1 /* JJSmallPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47BD12020724F28002101B1 /* JJSmallPhotoViewController.swift */; };
-		F47BD13020724F28002101B1 /* selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BD12220724F28002101B1 /* selected.png */; };
-		F47BD13120724F28002101B1 /* unSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = F47BD12320724F28002101B1 /* unSelected.png */; };
 		F491CE7A206CC06800400161 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F491CE78206CC06800400161 /* DemoCollectionViewCell.swift */; };
 		F491CE7B206CC06800400161 /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F491CE79206CC06800400161 /* DemoCollectionViewCell.xib */; };
 		F491CE80206D04B800400161 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F491CE7F206D04B800400161 /* Photos.framework */; };
 		F491CE82206D04C000400161 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F491CE81206D04BF00400161 /* PhotosUI.framework */; };
+		F4C7AA1C2073744C00B6BC3A /* JJBigPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7AA1B2073744C00B6BC3A /* JJBigPhotoCollectionViewCell.swift */; };
+		F4C7AA1E2073753500B6BC3A /* JJPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C7AA1D2073753400B6BC3A /* JJPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		F4037532206B832800772010 /* JJImagePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJImagePickerUITests.swift; sourceTree = "<group>"; };
 		F4037534206B832800772010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4037540206BB2DA00772010 /* DemoRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoRouterViewController.swift; sourceTree = "<group>"; };
+		F4256D6C20747917003368BF /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		F4256D70207484DC003368BF /* unSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unSelected@2x.png"; sourceTree = "<group>"; };
+		F4256D71207484DC003368BF /* selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected@2x.png"; sourceTree = "<group>"; };
+		F4256D782074AA21003368BF /* JJPhotoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPhotoConfiguration.swift; sourceTree = "<group>"; };
+		F4256D7B2074CE35003368BF /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		F47BD11520724F28002101B1 /* JJBigPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJBigPhotoViewController.swift; sourceTree = "<group>"; };
 		F47BD11620724F28002101B1 /* JJImagePickerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJImagePickerHeader.swift; sourceTree = "<group>"; };
 		F47BD11720724F28002101B1 /* JJImagePickerLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJImagePickerLibraryViewController.swift; sourceTree = "<group>"; };
@@ -77,12 +87,12 @@
 		F47BD11E20724F28002101B1 /* JJSmallPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJSmallPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F47BD11F20724F28002101B1 /* JJSmallPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJSmallPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		F47BD12020724F28002101B1 /* JJSmallPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JJSmallPhotoViewController.swift; sourceTree = "<group>"; };
-		F47BD12220724F28002101B1 /* selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected.png; sourceTree = "<group>"; };
-		F47BD12320724F28002101B1 /* unSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unSelected.png; sourceTree = "<group>"; };
 		F491CE78206CC06800400161 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F491CE79206CC06800400161 /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
 		F491CE7F206D04B800400161 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F491CE81206D04BF00400161 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		F4C7AA1B2073744C00B6BC3A /* JJBigPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJBigPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4C7AA1D2073753400B6BC3A /* JJPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JJPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,13 +177,34 @@
 			path = JJImagePickerUITests;
 			sourceTree = "<group>";
 		};
+		F4256D6920747917003368BF /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				F4256D6C20747917003368BF /* back@2x.png */,
+				F4256D71207484DC003368BF /* selected@2x.png */,
+				F4256D70207484DC003368BF /* unSelected@2x.png */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		F4256D7A2074CE07003368BF /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				F4256D7B2074CE35003368BF /* Toast.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		F47BD11420724F28002101B1 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
 				F47BD11520724F28002101B1 /* JJBigPhotoViewController.swift */,
+				F4C7AA1B2073744C00B6BC3A /* JJBigPhotoCollectionViewCell.swift */,
+				F4C7AA1D2073753400B6BC3A /* JJPreviewView.swift */,
 				F47BD11620724F28002101B1 /* JJImagePickerHeader.swift */,
 				F47BD11720724F28002101B1 /* JJImagePickerLibraryViewController.swift */,
 				F47BD11820724F28002101B1 /* JJImagePickerSheet.swift */,
+				F4256D782074AA21003368BF /* JJPhotoConfiguration.swift */,
 				F47BD11920724F28002101B1 /* JJLibraryTableViewCell.swift */,
 				F47BD11A20724F28002101B1 /* JJLibraryTableViewCell.xib */,
 				F47BD11B20724F28002101B1 /* JJNavigationController.swift */,
@@ -182,19 +213,11 @@
 				F47BD11E20724F28002101B1 /* JJSmallPhotoCollectionViewCell.swift */,
 				F47BD11F20724F28002101B1 /* JJSmallPhotoCollectionViewCell.xib */,
 				F47BD12020724F28002101B1 /* JJSmallPhotoViewController.swift */,
-				F47BD12120724F28002101B1 /* Photos */,
+				F4256D6920747917003368BF /* Photos */,
+				F4256D7A2074CE07003368BF /* Lib */,
 			);
 			name = PhotoBrowser;
 			path = ../../PhotoBrowser;
-			sourceTree = "<group>";
-		};
-		F47BD12120724F28002101B1 /* Photos */ = {
-			isa = PBXGroup;
-			children = (
-				F47BD12220724F28002101B1 /* selected.png */,
-				F47BD12320724F28002101B1 /* unSelected.png */,
-			);
-			path = Photos;
 			sourceTree = "<group>";
 		};
 		F491CE7E206D04B700400161 /* Frameworks */ = {
@@ -315,12 +338,13 @@
 			files = (
 				F47BD12920724F28002101B1 /* JJLibraryTableViewCell.xib in Resources */,
 				F403751D206B832800772010 /* LaunchScreen.storyboard in Resources */,
+				F4256D6F20747918003368BF /* back@2x.png in Resources */,
 				F403751A206B832800772010 /* Assets.xcassets in Resources */,
 				F4037518206B832800772010 /* Main.storyboard in Resources */,
-				F47BD13020724F28002101B1 /* selected.png in Resources */,
-				F47BD13120724F28002101B1 /* unSelected.png in Resources */,
 				F491CE7B206CC06800400161 /* DemoCollectionViewCell.xib in Resources */,
 				F47BD12E20724F28002101B1 /* JJSmallPhotoCollectionViewCell.xib in Resources */,
+				F4256D72207484DC003368BF /* unSelected@2x.png in Resources */,
+				F4256D73207484DC003368BF /* selected@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +369,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C7AA1E2073753500B6BC3A /* JJPreviewView.swift in Sources */,
 				F47BD12420724F28002101B1 /* JJBigPhotoViewController.swift in Sources */,
+				F4256D7C2074CE35003368BF /* Toast.swift in Sources */,
 				F47BD12F20724F28002101B1 /* JJSmallPhotoViewController.swift in Sources */,
 				F47BD12520724F28002101B1 /* JJImagePickerHeader.swift in Sources */,
 				F47BD12620724F28002101B1 /* JJImagePickerLibraryViewController.swift in Sources */,
@@ -355,6 +381,8 @@
 				F4037541206BB2DA00772010 /* DemoRouterViewController.swift in Sources */,
 				F491CE7A206CC06800400161 /* DemoCollectionViewCell.swift in Sources */,
 				F4037513206B832800772010 /* AppDelegate.swift in Sources */,
+				F4256D792074AA21003368BF /* JJPhotoConfiguration.swift in Sources */,
+				F4C7AA1C2073744C00B6BC3A /* JJBigPhotoCollectionViewCell.swift in Sources */,
 				F47BD12A20724F28002101B1 /* JJNavigationController.swift in Sources */,
 				F47BD12C20724F28002101B1 /* JJPhotoTool.swift in Sources */,
 				F47BD12720724F28002101B1 /* JJImagePickerSheet.swift in Sources */,

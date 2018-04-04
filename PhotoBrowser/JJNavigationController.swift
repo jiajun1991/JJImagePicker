@@ -10,11 +10,28 @@ import UIKit
 
 class JJNavigationController: UINavigationController {
     var callSelectImageBlock:((NSMutableArray)->())?
-
+    var configuration:JJPhotoConfiguration?{
+        didSet{
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    func setNaviBackBtn(hidden:Bool) {
+        if hidden {
+            return
+        }else{
+//            let backBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
+//            backBtn.setImage(UIImage.init(named: "back"), for: UIControlState.normal)
+//            backBtn.addTarget(self, action: #selector(backAction), for: UIControlEvents.touchUpInside)
+//            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: backBtn)
+        }
+    }
+//        @objc func backAction(){
+//            self.navigationController?.popViewController(animated: true)
+//        }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

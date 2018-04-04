@@ -49,5 +49,7 @@
 	<string>相机其他的权限</string>
 	<key>UIRequiresPersistentWiFi</key>
 	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

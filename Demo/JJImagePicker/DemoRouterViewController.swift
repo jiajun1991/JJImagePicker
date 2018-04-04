@@ -44,6 +44,9 @@ class DemoRouterViewController: UIViewController,UICollectionViewDelegate,UIColl
     @IBAction func showJJImageAction(_ sender: Any) {
         let imageSheet:JJImagePickerSheet = JJImagePickerSheet.init(frame: CGRect.zero)
         imageSheet.destinationControler = self
+        imageSheet.configuration?.maxSelectCount = 3
+        imageSheet.configuration?.navTitleColor = UIColor.white
+        imageSheet.configuration?.navBarColor = UIColor.init(red: 56/255.0, green: 124/255.0, blue: 150/255.0, alpha: 1)
         imageSheet.imageBlock = {(images) in
             self.dataArray?.addObjects(from: images as! [Any])
             self.cv.reloadData()
