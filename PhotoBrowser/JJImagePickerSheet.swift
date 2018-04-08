@@ -63,26 +63,32 @@ class JJImagePickerSheet: UIView,UIImagePickerControllerDelegate,UINavigationCon
         }
     }
     @objc func photoAlbumAction(){
-        if JJPhotoTool.shareManager().havePhotoLibraryAuthority(){
-            let library = JJImagePickerLibraryViewController()
-            library.returnImagesBlock = {(selectedImages) in
-                self.imageBlock(selectedImages)
+        PHPhotoLibrary.requestAuthorization { (status) in
+            if status == PHAuthorizationStatus.restricted || status == PHAuthorizationStatus.denied || status == PHAuthorizationStatus.notDetermined{
+                DispatchQueue.main.async(execute: {
+                    let alert = UIAlertView.init(title: "提示", message: "请到设置->应用里开启相机相册权限", delegate: nil, cancelButtonTitle: nil)
+                    self.destinationControler.view.addSubview(alert)
+                })
+            }else{
+                DispatchQueue.main.async(execute: {
+                    let library = JJImagePickerLibraryViewController()
+                    library.returnImagesBlock = {(selectedImages) in
+                        self.imageBlock(selectedImages)
+                    }
+                    let navi:JJNavigationController = self.getImageNavWithRootVC(rootVC: library)
+                    let smallPhotoVC = JJSmallPhotoViewController()
+                    let list = JJPhotoTool.shareManager().getLatestAddedPhotoList()
+                    //防止是空的
+                    if let title = list.photoTitle{
+                        smallPhotoVC.title = title as String
+                    }
+                    if let asset = list.assetCollection{
+                        smallPhotoVC.dataAry = JJPhotoTool.shareManager().getAssetsInAssetCollection(assetCollection: asset, ascending: true) as NSArray
+                    }
+                    navi.pushViewController(smallPhotoVC, animated: true)
+                    self.destinationControler.showDetailViewController(navi, sender: nil)
+                })
             }
-            let navi:JJNavigationController = self.getImageNavWithRootVC(rootVC: library)
-            let smallPhotoVC = JJSmallPhotoViewController()
-            let list = JJPhotoTool.shareManager().getLatestAddedPhotoList()
-            //防止是空的
-            if let title = list.photoTitle{
-                smallPhotoVC.title = title as String
-            }
-            if let asset = list.assetCollection{
-                smallPhotoVC.dataAry = JJPhotoTool.shareManager().getAssetsInAssetCollection(assetCollection: asset, ascending: true) as NSArray
-            }
-            navi.pushViewController(smallPhotoVC, animated: true)
-            self.destinationControler.showDetailViewController(navi, sender: nil)
-        }else{
-            let alert = UIAlertView.init(title: "提示", message: "请到设置->应用里开启相机相册权限", delegate: nil, cancelButtonTitle: nil)
-            self.addSubview(alert)
         }
         self.removeFromSuperview()
     }

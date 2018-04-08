@@ -28,7 +28,7 @@ class JJBigPhotoViewController: UIViewController,UICollectionViewDelegate,UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:JJBigPhotoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "JJBigPhotoCollectionViewCell", for: indexPath) as! JJBigPhotoCollectionViewCell
         let size = cell.previewView.imageView.frame.size
-        JJPhotoTool.shareManager().getImageByAsset(asset: self.bigPhotoDataAry[indexPath.row] as! PHAsset, size: size, resizeMode: PHImageRequestOptionsResizeMode.exact, completion: { (assetImage) in
+        JJPhotoTool.shareManager().getImageByAsset(asset: self.bigPhotoDataAry[indexPath.row] as! PHAsset, size: size, resizeMode: PHImageRequestOptionsResizeMode.none, completion: { (assetImage) in
                 cell.previewView.imageView.image = assetImage
                 self.allImageAry?[indexPath.row] = assetImage
             })
@@ -89,7 +89,7 @@ class JJBigPhotoViewController: UIViewController,UICollectionViewDelegate,UIColl
         self.layout?.sectionInset = UIEdgeInsetsMake(0, KItemMargin/2, 0, KItemMargin/2)
         self.layout?.itemSize = CGSize.init(width: SCREENWIDTH, height: self.view.frame.size.height-JJ_SAFEAREABOTTOM)
         self.collectionView = UICollectionView.init(frame: CGRect.init(x: -KItemMargin/2, y: 0, width: SCREENWIDTH+KItemMargin, height: self.view.frame.size.height-JJ_SAFEAREABOTTOM), collectionViewLayout: self.layout!)
-        self.collectionView?.backgroundColor = UIColor.white
+        self.collectionView?.backgroundColor = UIColor.black
         self.collectionView?.register(JJBigPhotoCollectionViewCell.self, forCellWithReuseIdentifier: "JJBigPhotoCollectionViewCell")
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self

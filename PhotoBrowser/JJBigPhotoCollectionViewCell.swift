@@ -11,7 +11,7 @@ import UIKit
 class JJBigPhotoCollectionViewCell: UICollectionViewCell {
     var willDisplaying:Bool?
     lazy var previewView:JJPreviewView = {
-        let tempPreview = JJPreviewView.init(frame: self.bounds)
+        let tempPreview = JJPreviewView.init(frame: self.contentView.frame)
         tempPreview.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue)))
         return tempPreview
     }()

@@ -16,7 +16,7 @@ static let _shareManager = JJPhotoTool()
     ///看是否有相关权限
     func havePhotoLibraryAuthority() -> Bool {
         let status = PHPhotoLibrary.authorizationStatus()
-        if status == PHAuthorizationStatus.restricted || status == PHAuthorizationStatus.denied {
+        if status == PHAuthorizationStatus.restricted || status == PHAuthorizationStatus.denied || status == PHAuthorizationStatus.notDetermined {
             return false
         }
         return true

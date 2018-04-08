@@ -23,12 +23,12 @@ class JJPreviewView: UIView,UIScrollViewDelegate {
         return tempScroll
     }()
     lazy var imageView:UIImageView = {
-        let tempIV = UIImageView.init(frame: self.containerView.frame)
+        let tempIV = UIImageView.init(frame: self.bounds)
         tempIV.contentMode = UIViewContentMode.scaleAspectFit
         return tempIV
     }()
     lazy var containerView:UIView = {
-        let tempContainer = UIView.init(frame: self.scrollView.frame)
+        let tempContainer = UIView.init(frame: self.bounds)
         return tempContainer
     }()
     func resetScale() {
