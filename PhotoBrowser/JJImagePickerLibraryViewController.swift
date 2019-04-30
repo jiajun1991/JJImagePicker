@@ -24,6 +24,7 @@ class JJImagePickerLibraryViewController: UIViewController,UITableViewDelegate,U
         tempTv.delegate = self
         tempTv.dataSource = self
         tempTv.register(UINib.init(nibName: "JJLibraryTableViewCell", bundle: nil), forCellReuseIdentifier: "JJLibraryTableViewCellID")
+        tempTv.tableFooterView = UIView.init(frame: CGRect.zero)
        return tempTv
     }()
     override func viewDidLoad() {
