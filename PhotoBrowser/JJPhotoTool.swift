@@ -56,6 +56,8 @@ static let _shareManager = JJPhotoTool()
             return "延时摄影"
         }else if title == "Live Photos"{
             return "实况照片"
+        }else if title == "Recents"{
+            return "最近"
         }
         return ""
     }
@@ -101,8 +103,8 @@ static let _shareManager = JJPhotoTool()
                 smartAlbum.enumerateObjects { (collection, idx, stop) in
                     if collection.localizedTitle == "Recently Added"{
                         let result:PHFetchResult = self.fetchAssetsInAssetCollection(assetCollection: collection, ascending: false)
+                        photos.photoTitle = self.transformAlbumTitle(title: collection.localizedTitle! as NSString)
                         if result.count > 0{
-                            photos.photoTitle = self.transformAlbumTitle(title: collection.localizedTitle! as NSString)
                             photos.photoNum = result.count
                             photos.firstAsset = result.firstObject as? PHAsset
                             photos.assetCollection = collection
